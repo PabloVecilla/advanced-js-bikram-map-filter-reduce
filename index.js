@@ -151,7 +151,7 @@ const result7Test = sentenceElements.reduce((acc, curr) => acc + " " +   curr , 
 const result8 = result7Test.trim(); 
 console.log(result8); 
 
-//  8.- Obtener el monto total de los elementos que pertenecen a catergory "code" en el siguiente array.
+//  9.- Obtener el monto total de los elementos que pertenecen a catergory "code" en el siguiente array.
 const books = [
   {
     name: ' JS for dummies',
@@ -181,3 +181,11 @@ const books = [
 const result9 = books.filter(item => item.category === "code").reduce((acc, curr) => acc+curr.price, 0); 
 console.log(result9); 
 // Resultado --> 60 */
+
+// OR:: 
+const result10 = books.reduce((acc, curr) => {
+  return curr.category === "code" ? 
+      acc + curr.price 
+      : acc;
+}, 0); 
+console.log("Segunda opción ejercicio 9: " + result10); 
